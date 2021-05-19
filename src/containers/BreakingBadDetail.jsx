@@ -18,7 +18,7 @@ const BreakingBadDetail = ({ match }) => {
     <h2>loading....</h2>
   ) : (
     <main>
-      <CharDetails character={character[0]} />
+      <CharDetails {...character[0]} />
     </main>
   );
 };
