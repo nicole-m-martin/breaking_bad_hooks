@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import CharList from '../components/characters/CharList';
-import Spinner from '../components/ui/Spinner';
+// import Spinner from '../components/ui/Spinner';
 import { findAllCharacters } from '../services/BreakingBadApi';
 
 const BreakingBadList = () => {
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const BreakingBadList = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  return loading ? (
+  return isLoading ? (
     // <Spinner />
     <h2>loading....</h2>
   ) : (
