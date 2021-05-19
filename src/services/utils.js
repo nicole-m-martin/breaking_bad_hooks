@@ -8,3 +8,14 @@ export const charInfo = (characters) => {
   });
   return responseData;
 };
+
+export const oneCharDetail = (character) => {
+  return {
+    id: character.char_id,
+    name: character.name,
+    img: character.img,
+    birthday: character.birthday,
+    nickname: character.nickname,
+    portrayed: character.portrayed,
+  };
+};

@@ -1,17 +1,19 @@
-import { charInfo } from './utils'
+import { charInfo, oneCharDetail } from './utils';
 
 export const findAllCharacters = async () => {
   const res = await fetch('https://www.breakingbadapi.com/api/characters');
-  const data = await res.json();
+  const json = await res.json();
 
-  const results = charInfo(data)
+  const results = charInfo(json);
   return results;
+};
 
+export const getCharacterDetails = async (id) => {
+  const res = await fetch(
+    `https://www.breakingbadapi.com/api/characters/${id}`
+  );
+  const json = await res.json();
 
-export const oneCharDetail = async (id) => {
-  const res = await fetch(`https://www.breakingbadapi.com/api/characters/${id}`);
-  const results = await res.json();
-
-
-  
-}
+  const results = oneCharDetail(json);
+  return results;
+};

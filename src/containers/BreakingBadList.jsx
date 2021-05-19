@@ -1,8 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import CharList from '../components/characters/CharList';
+import Spinner from '../components/ui/Spinner';
+import { findAllCharacters } from '../services/BreakingBadApi';
 
-const BreakingBadList = () => <h1>This is list container</h1>;
+const BreakingBadList = () => {
+  const [loading, setLoading] = useState(true);
+  const [characters, setCharacters] = useState([]);
 
-BreakingBadList.propTypes = {};
+  useEffect(() => {
+    findAllCharacters()
+      .then((characters) => setCharacters(characters))
+      .finally(() => setLoading(false));
+  }, []);
 
+  return loading ? (
+    // <Spinner />
+    <h2>loading....</h2>
+  ) : (
+    <main>
+      <CharList characters={characters} />
+    </main>
+  );
+};
 export default BreakingBadList;
