@@ -1,6 +1,5 @@
 import React from 'react';
 import CharDetails from '../components/characters/CharDetails';
-
 import useCharDetails from '../hooks/useCharDetails';
 import { useParams } from 'react-router-dom';
 

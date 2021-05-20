@@ -6,8 +6,10 @@ import style from '../../styles/CharItem.modules.css';
 const CharItem = ({ id, name, img }) => {
   return (
     <Link to={`/${id}`}>
-      <h3 className={style.nameText}>{name}</h3>
-      <img className={style.image} src={img} alt={name} />
+      <div className={style.container}>
+        <h3 className={style.nameText}>{name}</h3>
+        <img className={style.image} src={img} alt={name} />
+      </div>
     </Link>
   );
 };

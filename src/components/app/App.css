@@ -1,0 +1,7 @@
+body {
+  /* background-color: #ee5522; */
+  background-image: url('../../img/background.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+}

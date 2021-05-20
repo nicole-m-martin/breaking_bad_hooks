@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from '../ui/Header';
 import ListComponent from '../../containers/BreakingBadList';
 import DetailsComponent from '../../containers/BreakingBadDetail';
-
+import './App.css';
 export default class App extends Component {
   render() {
     return (
