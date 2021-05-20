@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from '../ui/Header';
 import BreakingBadList from '../../containers/BreakingBadList';
-import BreakingBadDetail from '../../containers/BreakingBadDetail';
+import DetailsComponent from '../../containers/BreakingBadDetail';
 
 export default class App extends Component {
   render() {
@@ -19,7 +19,7 @@ export default class App extends Component {
             <Route
               path="/:id"
               exact
-              render={(routerProps) => <BreakingBadDetail {...routerProps} />}
+              render={(routerProps) => <DetailsComponent {...routerProps} />}
             />
           </Switch>
         </div>

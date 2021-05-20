@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CharDetails from '../components/characters/CharDetails';
-import { getCharacterDetails } from '../services/BreakingBadApi';
-// import Spinner from '../img/spinner.gif';
 
-const BreakingBadDetail = ({ match }) => {
-  const [isLoading, setLoading] = useState(true);
-  const [character, setCharacter] = useState(null);
+import useCharDetails from '../hooks/useCharDetails';
+import { useParams } from 'react-router-dom';
 
-  useEffect(() => {
-    getCharacterDetails(match.params.id)
-      .then((character) => setCharacter(character))
-      .finally(() => setLoading(false));
-  }, []);
+const DetailsComponent = () => {
+  const { id } = useParams();
 
+  const { isLoading, character } = useCharDetails(id);
   return isLoading ? (
-    // <Spinner />
     <h2>loading....</h2>
   ) : (
     <main>
@@ -23,4 +17,4 @@ const BreakingBadDetail = ({ match }) => {
   );
 };
 
-export default BreakingBadDetail;
+export default DetailsComponent;
