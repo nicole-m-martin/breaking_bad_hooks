@@ -7,8 +7,8 @@ const CharItem = ({ id, name, img }) => {
   return (
     <Link to={`/${id}`}>
       <div className={style.container}>
-        <h3 className={style.nameText}>{name}</h3>
         <img className={style.image} src={img} alt={name} />
+        <h3 className={style.nameText}>{name}</h3>
       </div>
     </Link>
   );
