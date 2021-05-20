@@ -1,0 +1,26 @@
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+link {
+  list-style: none;
+}
+.nameText {
+  list-style: none;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.image {
+  height: 250px;
+  width: 200px;
+  border-radius: 15%;
+}
+
+h3 {
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
+}

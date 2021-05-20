@@ -1,0 +1,17 @@
+.charImage {
+  height: 500px;
+  border-radius: 15%;
+}
+
+.charText {
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+main {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
