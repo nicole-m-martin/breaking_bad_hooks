@@ -1,20 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CharList from '../components/characters/CharList';
-// import Spinner from '../components/ui/Spinner';
-import { findAllCharacters } from '../services/BreakingBadApi';
+import useCharList from '../hooks/useCharList';
 
-const BreakingBadList = () => {
-  const [isLoading, setLoading] = useState(true);
-  const [characters, setCharacters] = useState([]);
-
-  useEffect(() => {
-    findAllCharacters()
-      .then((characters) => setCharacters(characters))
-      .finally(() => setLoading(false));
-  }, []);
+const ListComponent = () => {
+  const { isLoading, characters } = useCharList();
 
   return isLoading ? (
-    // <Spinner />
     <h2>loading....</h2>
   ) : (
     <main>
@@ -22,4 +13,5 @@ const BreakingBadList = () => {
     </main>
   );
 };
-export default BreakingBadList;
+
+export default ListComponent;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from '../ui/Header';
-import BreakingBadList from '../../containers/BreakingBadList';
+import ListComponent from '../../containers/BreakingBadList';
 import DetailsComponent from '../../containers/BreakingBadDetail';
 
 export default class App extends Component {
@@ -14,7 +14,7 @@ export default class App extends Component {
             <Route
               path="/"
               exact
-              render={(routerProps) => <BreakingBadList {...routerProps} />}
+              render={(routerProps) => <ListComponent {...routerProps} />}
             />
             <Route
               path="/:id"
